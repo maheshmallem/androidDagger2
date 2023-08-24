@@ -8,7 +8,7 @@ interface UserRepository {
 }
 
 class SqlRepository @Inject constructor() : UserRepository {
-    val TAG = SqlRepository::class.java.name;
+
 
     override fun saveUser(email: String, password: String) {
         Log.d(TAG, "user saved in DB")
@@ -16,7 +16,7 @@ class SqlRepository @Inject constructor() : UserRepository {
 }
 
 class FirebaseRepository :UserRepository{
-    val TAG = FirebaseRepository::class.java.name;
+
     override fun saveUser(email: String, password: String) {
         Log.d(TAG, "user saved in Firebase")
     }

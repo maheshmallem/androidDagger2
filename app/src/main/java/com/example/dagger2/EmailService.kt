@@ -8,17 +8,13 @@ interface NotificationService{
 }
 
 class EmailService @Inject constructor() :NotificationService{
-    val TAG = UserRepository::class.java.name;
-
     override fun sendEmail(to :String, from:String, body: String?){
         Log.d(TAG, "Email sent")
     }
 }
-
-class MessageService : NotificationService{
-    val TAG = MessageService::class.java.name;
+class MessageService(private val retreyCount :Int) : NotificationService{
     override fun sendEmail(to: String, from: String, body: String?) {
-        Log.d(TAG, "Email sent")
+        Log.d(TAG, "Email sent -- Retry count $retreyCount")
     }
 
 }
