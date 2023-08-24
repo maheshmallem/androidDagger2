@@ -9,10 +9,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
+
+
     var component = DaggerUserRegistrationComponent.builder().build()
         val registrationService = component.getUserRegistrationService();
         val emailService = component.getEmailService();
 
+   // Basic Dagger changes done
 
         registrationService.registerUser("mallemmahesh@gmail.com","123456")
 
